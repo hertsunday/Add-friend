@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>FRIENDS</title>
+    <link rel="icon" href="icon.svg" type="image/x-icon">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+</head>
+
+<body>
+    <div class="main-container">
+        <div class="full-form">
+            <div class="background-form"></div>
+            <form class="add-form-container" onsubmit="return onSubmitFunction(event)">
+                <div class="add-form">
+                    <div class="input-container">
+                        <span class="key-item">name:</span>
+                        <input class="input-form" type="text" maxlength="15">
+                    </div>
+                    <div class="input-container">
+                        <span class="key-item">surname:</span>
+                        <input class="input-form" type="text" maxlength="15">
+                    </div>
+                    <div class="input-container">
+                        <span class="key-item">birthday:</span>
+                        <input class="input-form" type="text" maxlength="20">
+                    </div>
+                    <div class="input-container">
+                        <span class="key-item">phone number:</span>
+                        <input class="input-form" type="text" maxlength="20">
+                    </div>
+                    <div class="input-container">
+                        <span class="key-item">email:</span>
+                        <input class="input-form" type="text" maxlength="25">
+                    </div>
+                </div>
+                <div class="form-buttons">
+                    <label class="picture-button form-buttons-size">
+                        <input class="hide-input picture-input" type="file" accept="image/*" onchange="return loadFile(event)">
+                        <svg class="picture-button-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                            <path d="M184.765,86.883c-27.619,0-50.087,22.468-50.087,50.087s22.468,50.087,50.087,50.087    c27.619,0,50.087-22.468,50.087-50.087C234.852,109.351,212.384,86.883,184.765,86.883z"/>
+                            <path d="M461.913,0H50.087C22.468,0,0,22.468,0,50.087v411.826C0,489.532,22.468,512,50.087,512h411.826    C489.532,512,512,489.532,512,461.913V50.087C512,22.468,489.532,0,461.913,0z M445.217,293.609l-88.368-88.37    c-6.521-6.52-17.091-6.52-23.613,0L228.174,310.304l-60.544-54.979c-6.52-6.52-17.089-6.52-23.609,0L66.783,327V83.478    c0-9.228,7.467-16.696,16.696-16.696h345.043c9.228,0,16.696,7.467,16.696,16.696V293.609z"/>
+                        </svg>
+                    </label>
+                    <label class="delete-button form-buttons-size">
+                        <input class="hide-input" type="button">
+                        <svg class="delete-button-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="64px" height="64px" viewBox="0 0 64 64" aria-hidden="true" role="img" class="iconify iconify--emojione-monotone" preserveAspectRatio="xMidYMid meet"><path d="M62 10.571L53.429 2L32 23.429L10.571 2L2 10.571L23.429 32L2 53.429L10.571 62L32 40.571L53.429 62L62 53.429L40.571 32z" fill="currentColor"/></svg>
+                    </label>
+                    <label class="clear-button form-buttons-size">
+                        <input class="hide-input" type="reset">
+                        <svg class="clear-button-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1024px" height="1024px" viewBox="0 0 1024 1024" t="1569683368540" class="icon" version="1.1" p-id="9723"><defs><style type="text/css"/></defs><path d="M899.1 869.6l-53-305.6H864c14.4 0 26-11.6 26-26V346c0-14.4-11.6-26-26-26H618V138c0-14.4-11.6-26-26-26H432c-14.4 0-26 11.6-26 26v182H160c-14.4 0-26 11.6-26 26v192c0 14.4 11.6 26 26 26h17.9l-53 305.6c-0.3 1.5-0.4 3-0.4 4.4 0 14.4 11.6 26 26 26h723c1.5 0 3-0.1 4.4-0.4 14.2-2.4 23.7-15.9 21.2-30zM204 390h272V182h72v208h272v104H204V390z m468 440V674c0-4.4-3.6-8-8-8h-48c-4.4 0-8 3.6-8 8v156H416V674c0-4.4-3.6-8-8-8h-48c-4.4 0-8 3.6-8 8v156H202.8l45.1-260H776l45.1 260H672z" p-id="9724"/></svg>
+                    </label>
+                    <label class="confirm-button form-buttons-size">
+                        <input class="hide-input" type="submit">
+                        <svg class="confirm-button-svg" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="svg2" sodipodi:docname="ok.svg" inkscape:version="0.48.4 r9939" x="0px" y="0px" width="1200px" height="1200px" viewBox="0 0 1200 1200" enable-background="new 0 0 1200 1200" xml:space="preserve">
+                            <path id="path15124" inkscape:connector-curvature="0" d="M1004.237,99.152l-611.44,611.441L194.492,512.288L0,706.779  l198.305,198.306l195.762,195.763L588.56,906.355L1200,294.916L1004.237,99.152z"/>
+                        </svg>
+                    </label>
+                </div>
+            </form>
+        </div>
+        <button class="add-friend button-work">Add new friend</button>
+    </div>
+    <script src="main.js"></script>
+</body>
+
+</html>
